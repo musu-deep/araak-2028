@@ -1,0 +1,1 @@
+export async function POST(req){const data=await req.json(); if(!data?.name||!data?.email||!data?.message)return Response.json({ok:false,error:'Missing fields'},{status:400}); console.log('ARAAK contact lead',data); return Response.json({ok:true,message:'Received'});}
