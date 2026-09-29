@@ -71,49 +71,16 @@ main > section:nth-of-type(3n){animation:revealFromBottom .85s cubic-bezier(.22,
 }
 
 
-/* V6 — section-by-section navigation, not a continuous moving canvas */
-html{scroll-behavior:smooth;scroll-snap-type:y mandatory;scroll-padding-top:74px}
-body{overflow-x:hidden}
-main>section{
-  scroll-snap-align:start;
-  scroll-snap-stop:always;
-  min-height:calc(100svh - 74px);
-  position:relative;
-  animation:none!important;
-  transform:none!important;
-  translate:none!important;
-}
-main>section>*{
-  transform:none;
-}
-.footprint{
-  min-height:calc(100svh - 74px);
-  overflow:hidden;
-}
+
+/* Footprint image correction — preserve original page flow */
 .footprintVisual{
-  min-height:0!important;
-  height:calc(100svh - 74px);
-  width:100%;
+  min-height:560px;
+  align-self:stretch;
   background-image:url('/araak-footprint.webp')!important;
   background-size:contain!important;
   background-position:center!important;
   background-repeat:no-repeat!important;
-  transform:none!important;
-  animation:none!important;
 }
-/* disable previous view-linked card movement */
-.sectorCards>*,
-.productsGrid>*,
-[class*="grid"]>article{
-  animation:none!important;
-  transform:none!important;
-}
-/* navigation lands cleanly below fixed header */
-main>section[id]{scroll-margin-top:74px}
 @media(max-width:900px){
- html{scroll-snap-type:y proximity}
- main>section{min-height:auto;scroll-snap-stop:normal}
- .footprint{min-height:auto}
- .footprintVisual{height:auto;aspect-ratio:2048/768;background-size:contain!important}
+ .footprintVisual{min-height:420px;background-size:contain!important;background-position:center!important}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
