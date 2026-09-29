@@ -1,6 +1,6 @@
 # ARAAK Holding Platform — Prototype
 
-Full-stack Next.js prototype for **مجموعة أراك القابضة**.
+Full-stack Next.js prototype for **مجموعة مجموعة اراك**.
 
 ## Features
 - Arabic RTL responsive corporate experience
