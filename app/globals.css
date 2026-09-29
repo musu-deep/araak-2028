@@ -84,3 +84,45 @@ main > section:nth-of-type(3n){animation:revealFromBottom .85s cubic-bezier(.22,
 @media(max-width:900px){
  .footprintVisual{min-height:420px;background-size:contain!important;background-position:center!important}
 }
+
+/* V7 — premium full-bleed footprint background */
+.footprint{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  min-height:680px;
+  background:#c9aa75;
+}
+.footprintVisual{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:100%!important;
+  z-index:-2;
+  background-image:url('/araak-footprint.webp')!important;
+  background-size:cover!important;
+  background-position:center center!important;
+  background-repeat:no-repeat!important;
+}
+.footprint::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:linear-gradient(90deg,rgba(13,28,27,.08) 0%,rgba(13,28,27,.02) 45%,rgba(198,163,102,.38) 72%,rgba(198,163,102,.82) 100%);
+}
+.footprint>div:first-child{
+  position:relative;
+  z-index:2;
+  margin-inline-start:auto;
+  padding:clamp(2rem,5vw,5rem);
+  max-width:650px;
+  text-shadow:0 1px 18px rgba(255,255,255,.16);
+}
+@media(max-width:900px){
+ .footprint{min-height:620px}
+ .footprintVisual{background-size:cover!important;background-position:32% center!important}
+ .footprint::after{background:linear-gradient(180deg,rgba(13,28,27,.05) 0%,rgba(198,163,102,.28) 48%,rgba(198,163,102,.9) 82%)}
+}
