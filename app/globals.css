@@ -18,8 +18,8 @@
 
 
 /* Section reveal choreography */
-@keyframes revealFromRight{from{opacity:0;transform:translate3d(70px,0,0)}to{opacity:1;transform:none}}
-@keyframes revealFromLeft{from{opacity:0;transform:translate3d(-70px,0,0)}to{opacity:1;transform:none}}
+@keyframes revealFromRight{from{opacity:0;transform:translate3d(0,36px,0)}to{opacity:1;transform:none}}
+@keyframes revealFromLeft{from{opacity:0;transform:translate3d(0,36px,0)}to{opacity:1;transform:none}}
 @keyframes revealFromBottom{from{opacity:0;transform:translate3d(0,64px,0)}to{opacity:1;transform:none}}
 @keyframes revealSoft{from{opacity:0;transform:scale(.975)}to{opacity:1;transform:scale(1)}}
 
@@ -186,3 +186,16 @@ section.footprint>div:first-child:hover{
    align-self:flex-end!important;
  }
 }
+
+
+/* V9 — remove horizontal drift when scrolling back up */
+main>section,
+main>section>*,
+.sectorCards>*,
+.productsGrid>*,
+[class*="grid"]>article{
+  margin-left:auto;
+  margin-right:auto;
+}
+@keyframes revealFromRight{from{opacity:0;transform:translate3d(0,36px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes revealFromLeft{from{opacity:0;transform:translate3d(0,36px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
