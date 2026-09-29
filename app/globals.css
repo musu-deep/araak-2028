@@ -126,3 +126,63 @@ main > section:nth-of-type(3n){animation:revealFromBottom .85s cubic-bezier(.22,
  .footprintVisual{background-size:cover!important;background-position:32% center!important}
  .footprint::after{background:linear-gradient(180deg,rgba(13,28,27,.05) 0%,rgba(198,163,102,.28) 48%,rgba(198,163,102,.9) 82%)}
 }
+
+
+/* V8 definitive footprint fix */
+section.footprint{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  width:100%!important;
+  max-width:none!important;
+  min-height:680px!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  background-color:#c9aa75!important;
+  background-image:
+    linear-gradient(90deg,rgba(12,27,26,.02) 0%,rgba(12,27,26,.00) 48%,rgba(201,170,117,.18) 66%,rgba(201,170,117,.78) 100%),
+    url('/araak-footprint.webp')!important;
+  background-size:cover!important;
+  background-position:center center!important;
+  background-repeat:no-repeat!important;
+  animation:none!important;
+  transform:none!important;
+  translate:none!important;
+  will-change:auto!important;
+}
+section.footprint .footprintVisual{display:none!important}
+section.footprint::after{display:none!important}
+section.footprint>div:first-child{
+  position:relative!important;
+  inset:auto!important;
+  z-index:2!important;
+  width:min(44%,700px)!important;
+  max-width:700px!important;
+  margin:0!important;
+  padding:clamp(2rem,5vw,5rem)!important;
+  animation:none!important;
+  transform:none!important;
+  translate:none!important;
+}
+section.footprint:hover,
+section.footprint:focus-within,
+section.footprint>div:first-child:hover{
+  transform:none!important;
+  translate:none!important;
+}
+@media(max-width:900px){
+ section.footprint{
+   min-height:620px!important;
+   background-position:38% center!important;
+   background-image:
+     linear-gradient(180deg,rgba(12,27,26,.02) 0%,rgba(201,170,117,.18) 55%,rgba(201,170,117,.9) 86%),
+     url('/araak-footprint.webp')!important;
+ }
+ section.footprint>div:first-child{
+   width:100%!important;
+   max-width:none!important;
+   align-self:flex-end!important;
+ }
+}
