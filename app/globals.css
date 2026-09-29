@@ -35,3 +35,20 @@ main > section:nth-of-type(3n){animation:revealFromBottom .85s cubic-bezier(.22,
 @media(max-width:720px){
  main > section:nth-of-type(n){animation-name:revealFromBottom;animation-duration:.65s}
 }
+
+/* Saudi footprint — Jeddah origin */
+.footprint .world{display:none!important}
+.saudiMap{position:relative;min-height:540px;display:grid;place-items:center;isolation:isolate}
+.saudiMap svg{width:min(92%,560px);height:auto;overflow:visible;filter:drop-shadow(0 28px 35px rgba(20,24,22,.18))}
+.kingdomShape{fill:rgba(24,31,29,.96);stroke:rgba(218,177,104,.7);stroke-width:3}
+.jeddahPulse{fill:none;stroke:#d9ae63;stroke-width:3;transform-origin:112px 330px;animation:jeddahPulse 2.4s ease-out infinite}
+.jeddahDot{fill:#e3bb74;filter:drop-shadow(0 0 8px rgba(227,187,116,.9))}
+.networkLine{fill:none;stroke:#d9ae63;stroke-width:2;stroke-dasharray:7 10;opacity:.7}
+.n1{animation:dashFlow 8s linear infinite}.n2{animation:dashFlow 10s linear infinite reverse}.n3{animation:dashFlow 12s linear infinite}
+.jeddahLabel{position:absolute;left:8%;top:55%;display:flex;flex-direction:column;gap:2px;padding:10px 14px;border-right:2px solid #d9ae63;background:rgba(237,221,188,.82);backdrop-filter:blur(8px)}
+.jeddahLabel b{font-size:1.35rem}.jeddahLabel span{font-size:.72rem;letter-spacing:.08em}
+.mapCaption{position:absolute;bottom:5%;letter-spacing:.28em;font-size:.65rem;font-weight:700;opacity:.55}
+@keyframes jeddahPulse{0%{transform:scale(.45);opacity:1}80%,100%{transform:scale(2.1);opacity:0}}
+@keyframes dashFlow{to{stroke-dashoffset:-170}}
+@media(max-width:720px){.saudiMap{min-height:390px}.jeddahLabel{left:4%;top:56%}.networkLine{stroke-width:2.5}}
+@media(prefers-reduced-motion:reduce){.jeddahPulse,.networkLine{animation:none!important}}
